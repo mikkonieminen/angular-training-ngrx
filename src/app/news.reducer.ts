@@ -8,7 +8,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  news: [{ title: 'Taxation is getting even higher' }, { title: 'Weather is cold, again' }]
+  news: []
 };
 
 export function reducer(state = initialState, action: NewsActions): State {
@@ -16,6 +16,9 @@ export function reducer(state = initialState, action: NewsActions): State {
 
     case NewsActionTypes.LoadNewss:
       return state;
+
+    case NewsActionTypes.SetNewss:
+      return { ...state, news: action.news };
 
     default:
       return state;

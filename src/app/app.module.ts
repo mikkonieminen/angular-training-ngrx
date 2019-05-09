@@ -12,6 +12,7 @@ import { AppEffects } from './app.effects';
 import * as fromNews from './news.reducer';
 import { NewsEffects } from './news.effects';
 import { NewsComponent } from './news/news.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NewsComponent } from './news/news.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
